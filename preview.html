@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Preview</title>
+</head>
+<body>
+
+<div id="preview"></div>
+
+<script>
+const data = JSON.parse(localStorage.getItem('proposta'))
+
+document.getElementById('preview').innerHTML = `
+  <h1>${data.empresa}</h1>
+  <h2>${data.titulo}</h2>
+  <p>${data.subtitulo}</p>
+
+  <hr>
+
+  <p><b>Cliente:</b> ${data.cliente}</p>
+
+  <p>${data.intro}</p>
+`
+</script>
+
+</body>
+</html>

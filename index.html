@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <title>Criador de Propostas Profissional</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div id="modalExcluir" class="modal">
+  <div class="modal-content">
+    <h3>Excluir Proposta?</h3>
+    <p>Esta ação não pode ser desfeita.</p>
+    <div class="modal-buttons">
+      <button class="btn-cancelar" onclick="fecharModal()">Cancelar</button>
+      <button class="btn-confirmar-exclusao" onclick="confirmarExclusao()">Excluir</button>
+    </div>
+  </div>
+</div>
+
+<div class="main-container">
+  <div class="sidebar">
+    <h3>Propostas</h3>
+    <button class="btn-nova" onclick="novaProposta()">+ Nova Proposta</button>
+    <div id="listaPropostas"></div>
+  </div>
+
+  <div class="workspace">
+    <div class="editor">
+      <div class="section-title">Cabeçalho e Identidade</div>
+      <div class="field">
+        <label>Logo da Empresa</label>
+        <input type="file" id="logoUpload" accept="image/*">
+      </div>
+      
+      <div class="grid-fields">
+        <div class="field"><label>Telefone</label><input id="telefone"></div>
+        <div class="field"><label>E-mail</label><input id="email"></div>
+        <div class="field"><label>Website</label><input id="website"></div>
+      </div>
+
+      <div class="section-title">Redes Sociais</div>
+      <div class="grid-fields">
+        <div class="field"><label>Instagram</label><input id="instagram"></div>
+        <div class="field"><label>YouTube</label><input id="youtube"></div>
+        <div class="field"><label>TikTok</label><input id="tiktok"></div>
+        <div class="field"><label>X (Twitter)</label><input id="twitter"></div>
+      </div>
+
+      <div class="section-title">Conteúdo da Proposta</div>
+      <div class="field"><label>Sua Empresa (Responsável)</label><input id="empresa"></div>
+      <div class="field"><label>Data da Proposta</label><input type="date" id="dataProposta"></div>
+      <div class="field"><label>Título</label><input id="titulo"></div>
+      <div class="field"><label>Nome do Cliente</label><input id="cliente"></div>
+      <div class="field"><label>Subtítulo (Nome do Projeto)</label><input id="subtitulo"></div>
+
+      <div class="field">
+        <label>Texto da Proposta</label>
+        <div class="toolbar">
+          <button id="btn-bold" onclick="execCmd('bold')">B</button>
+          <button id="btn-italic" onclick="execCmd('italic')">I</button>
+          <button id="btn-underline" onclick="execCmd('underline')">U</button>
+        </div>
+        <div id="intro" class="rich-editor" contenteditable="true"></div>
+      </div>
+
+      <div class="acoes">
+        <button id="btnSalvar" class="btn-primario" onclick="salvarProposta()">Salvar</button>
+        <button id="btnEditar" class="btn-editar" onclick="editarProposta()" style="display:none;">Editar Proposta</button>
+      </div>
+    </div>
+
+    <div class="preview-container">
+      <div class="page" id="previewContent"></div>
+    </div>
+  </div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
